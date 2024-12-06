@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Khách Hàng</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/style-admin.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Top bar Start -->
+    <div class="top-bar">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-6">
+                    <i class="fa fa-envelope"></i> inoriyuzuriha1808@gmail.com
+                </div>
+                <div class="col-sm-6">
+                    <i class="fa fa-phone-alt"></i> 0388919451
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Top bar End -->
+
+    <!-- Nav Bar Start -->
+    <div class="nav">
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+                <a href="#" class="navbar-brand">MENU</a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                    <div class="navbar-nav mr-auto">
+                        <a href="../index.html" class="nav-item nav-link active">Home</a>
+                        <a href="../product-list.html" class="nav-item nav-link">Sản Phẩm</a>
+                    </div>
+                    <div class="navbar-nav ml-auto">
+                        <span class="nav-item nav-link admin-display">
+                            <i class="fa fa-user"></i> Admin
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>    
+    <!-- Nav Bar End -->
+
+    <!-- Bottom Bar Start -->
+    <div class="bottom-bar">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-md-3">
+                    <div class="logo">
+                        <a href="../index.html">
+                            <img src="../img/ry.webp" alt="Logo">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="title text-center">
+                        <h1 class="text-center">Trang Quản Lý (Admin)</h1>
+                        <a href="manage-products.html" class="btn btn-link">Quản lý sản phẩm</a>
+                        <a href="manage-users.html" class="btn btn-link">Quản lý người dùng</a>
+                        <a href="manageCustomer.html" class="btn btn-link">Quản lý khách hàng</a>
+                        <a href="manageOrder.html" class="btn btn-link">Quản lý đơn hàng</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bottom Bar End -->
+
+    <div class="container mt-4">
+        <h1 class="text-center">Quản Lý Khách Hàng</h1>
+
+        <!-- Phần tùy chọn thống kê -->
+        <section id="main">
+            <div class="filter">
+                <!-- Chọn filter -->
+                <span>
+                    <input type="radio" name="chon" value="ten" id="ten" onclick="checkTen()" checked>
+                    <label for="ten">Theo tên sản phẩm</label>
+                </span>
+                <span>
+                    <input type="radio" name="chon" value="loai" id="loai" onclick="checkLoai()">
+                    <label for="loai">Theo loại sản phẩm</label>
+                </span> 
+                <!-- Thống kê theo tên sản phẩm -->
+                <input type="text" name="tenSp" id="tenSp" placeholder="Tên sản phẩm">
+
+                <!-- Thống kê theo loại sản phẩm -->
+                <select name="loaiSp" id="loaiSp">
+                    <option value="Honkai Star Rail">Honkai Star Rail</option>
+                    <option value="Genshin Impact">Genshin Impact</option>
+                    <option value="Zenless Zone Zero">Zenless Zone Zero</option>
+                    <option value="Honkai Impact 3">Honkai Impact 3</option>
+                    <option value="Gundam">Gundam</option>
+                </select>
+
+                <!-- Chọn ngày -->
+                <div class="date">
+                    <label for="start">Từ ngày: </label>
+                    <input type="date" id="start" name="start" value="2023-11-24" min="2018-01-01" max="2023-12-31">
+                    <label for="end">Đến ngày: </label>
+                    <input type="date" id="end" name="end" value="2023-11-30" min="2018-01-01" max="2023-12-31">
+                </div>
+
+                <!-- Nút thống kê -->
+                <a onclick="move()" class="thongKe">Thống kê</a>
+            </div>
+        </section>
+
+        <!-- Bảng hiển thị khách hàng -->
+        <div class="mt-4">
+            <h4 class="text-center">Danh Sách Khách Hàng</h4>
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th>Tên Khách Hàng</th>
+                        <th>Email</th>
+                        <th>Số Điện Thoại</th>
+                        <th>Địa Chỉ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>001</td>
+                        <td>Nguyễn Trọng Khang</td>
+                        <td>trongkhang123@gmail.com</td>
+                        <td>0123456789</td>
+                        <td>TP. Hồ Chí Minh</td>
+                    </tr>
+                    <tr>
+                        <td>002</td>
+                        <td>Nguyễn Quốc Hưng</td>
+                        <td>quochung213@gmail.com</td>
+                        <td>0987654321</td>
+                        <td>TP. Hồ Chí Minh</td>
+                    </tr>
+                    <tr>
+                        <td>003</td>
+                        <td>Nguyễn Trọng Khang</td>
+                        <td>trongkhang123@gmail.com</td>
+                        <td>0987654321</td>
+                        <td>TP. Hồ Chí Minh</td>
+                    </tr>
+                    <tr>
+                        <td>004</td>
+                        <td>Nguyễn Quốc Hưng</td>
+                        <td>quochung213@gmail.com</td>
+                        <td>0987654321</td>
+                        <td>TP. Hồ Chí Minh</td>
+                    </tr>
+                    <tr>
+                        <td>005</td>
+                        <td>Lâm Tuấn Kiệt</td>
+                        <td>lamtuankiet123@gmail.com</td>
+                        <td>0913245678</td>
+                        <td>TP. Hồ Chí Minh</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Footer Start -->
+    <div class="footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-widget">
+                        <h2>Liên lạc qua </h2>
+                        <div class="contact-info">
+                            <p><i class="fa fa-map-marker"></i>273 Đ. An Dương Vương, Phường 3, Quận 5, Hồ Chí Minh</p>
+                            <p><i class="fa fa-envelope"></i>inoriyuzuriha1808@gmail.com</p>
+                            <p><i class="fa fa-phone"></i>0388919451</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-widget">
+                        <h2>Follow Us</h2>
+                        <div class="contact-info">
+                            <div class="social">
+                                <a href=""><i class="fab fa-twitter"></i></a>
+                                <a href="https://www.facebook.com/ry.order1011/?ref=embed_page"><i class="fab fa-facebook-f"></i></a>
+                                <a href=""><i class="fab fa-linkedin-in"></i></a>
+                                <a href=""><i class="fab fa-instagram"></i></a>
+                                <a href=""><i class="fab fa-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-widget">
+                        <h2>Company Info</h2>
+                        <ul>
+                            <li><a href="https://www.facebook.com/ry.order1011/?ref=embed_page">About Us</a></li>
+                            <li><a href="https://ryorder.vn/pages/chinh-sach-mua-hang-tai-ry-order">Chính sách mua hàng</a></li>
+                            <li><a href="https://ryorder.vn/pages/dieu-khoan-dich-vu">Điều khoản dịch vụ</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-widget">
+                        <h2>Purchase Info</h2>
+                        <ul>
+                            <li><a href="https://ryorder.vn/pages/chinh-sach-ho-tro-khach-hang-tai-ry-order">Pyament Policy</a></li>
+                            <li><a href="https://ryorder.vn/pages/van-de-van-chuyen">Vấn đề vận chuyển</a></li>
+                            <li><a href="https://ryorder.vn/pages/tam-su-voi-khach-hang">Return Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row payment align-items-center">
+                <div class="col-md-6">
+                    <div class="payment-method">
+                        <h2>We Accept:</h2>
+                        <img src="img/payment-method.png" alt="Payment Method" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="payment-security">
+                        <h2>Secured By:</h2>
+                        <img src="img/godaddy.svg" alt="Payment Security" />
+                        <img src="img/norton.svg" alt="Payment Security" />
+                        <img src="img/ssl.svg" alt="Payment Security" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <script>
+        function move() {
+            var tenSp = document.getElementById("tenSp").value.trim(); // Lấy giá trị ô tên sản phẩm và loại bỏ khoảng trắng thừa
+            var chon = document.querySelector('input[name="chon"]:checked').value; // Kiểm tra lựa chọn filter
+
+            if (chon === "ten" && tenSp === "") {
+                alert("Vui lòng nhập tên sản phẩm");
+            } else {
+                window.location.href = 'manageSummary.html';
+            }
+        }
+
+        function checkTen() {
+            document.getElementById("tenSp").style.display = "inline";
+            document.getElementById("loaiSp").style.display = "none";
+        }
+
+        function checkLoai() {
+            document.getElementById("loaiSp").style.display = "inline";
+            document.getElementById("tenSp").style.display = "none";
+        }
+        window.onload = checkTen;
+    </script>
+</body>
+</html>

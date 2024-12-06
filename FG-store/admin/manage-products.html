@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet"></head>
+    <link href="../css/style-admin.css" rel="stylesheet"></head>
+<body>
+    <!-- Top bar Start -->
+    <div class="top-bar">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-6">
+                    <i class="fa fa-envelope"></i> inoriyuzuriha1808@gmail.com
+                </div>
+                <div class="col-sm-6">
+                    <i class="fa fa-phone-alt"></i> 0388919451
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Top bar End -->
+
+
+    <!-- Nav Bar Start -->
+    <div class="nav">
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+                <a href="#" class="navbar-brand">MENU</a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                    <div class="navbar-nav mr-auto">
+                        <a href="../index.html" class="nav-item nav-link active">Home</a>
+                        <a href="../product-list.html" class="nav-item nav-link">Sản Phẩm</a>
+                    </div>
+                    <div class="navbar-nav ml-auto">
+                        <span class="nav-item nav-link admin-display">
+                            <i class="fa fa-user"></i> Admin
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>    
+    <!-- Nav Bar End -->
+
+
+    <!-- Bottom Bar Start -->
+    <div class="bottom-bar">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-md-3">
+                    <div class="logo">
+                        <a href="../index.html">
+                            <img src="../img/ry.webp" alt="Logo">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="title text-center">
+                        <h1 class="text-center">Trang Quản Lý (Admin)</h1>
+                        <a href="manage-products.html" class="btn btn-link">Quản lý sản phẩm</a>
+                        <a href="manage-users.html" class="btn btn-link">Quản lý người dùng</a>
+                        <a href="manageCustomer.html" class="btn btn-link">Quản lý khách hàng</a>
+                        <a href="manageOrder.html" class="btn btn-link">Quản lý đơn hàng</a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <!-- Bottom Bar End -->   
+
+    <!-- Breadcrumb Start -->
+    <div class="breadcrumb-wrap">
+        <div class="container-fluid">
+            <h1 class="text-center">Quản lý sản phẩm</h1>
+        </div>
+    </div>
+    <!-- Breadcrumb End -->
+
+    <!-- Cart Page Start -->
+    <div class="cart-page">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-8">
+                    <button class="btn btn-success mb-3" onclick="showAddForm()"><i class="fas fa-plus"></i> Thêm Sản Phẩm</button>
+                    <div class="cart-page-inner">
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th>Sản phẩm</th>
+                                        <th>Giá</th>
+                                        <th>Số lượng</th>
+                                        <th>Hành Động</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="productTable">
+                                    <!-- Sản phẩm sẽ được hiển thị ở đây -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div id="productFormContainer" style="display: none;">
+                        <h5 id="formTitle">Thêm/Sửa Sản Phẩm</h5>
+                        <form id="productForm">
+                            <input type="hidden" id="productId">
+                            <div class="form-group">
+                                <label for="image">Hình ảnh</label>
+                                <input type="file" id="image" class="form-control" accept="image/*" onchange="previewImage(event)">
+                                <img id="imagePreview" src="" alt="Xem trước ảnh" class="mt-2" style="max-width: 100px; display: none;">
+                            </div>
+                            <div class="form-group">
+                                <label for="name">Tên Sản Phẩm</label>
+                                <input type="text" id="name" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="price">Giá</label>
+                                <input type="number" id="price" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="quantity">Số lượng</label>
+                                <input type="number" id="quantity" class="form-control" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Lưu</button>
+                            <button type="button" class="btn btn-secondary" onclick="toggleForm()">Hủy</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Cart Page End -->
+
+    <!-- Footer Start -->
+    <div class="footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-widget">
+                        <h2>Liên lạc qua </h2>
+                        <div class="contact-info">
+                            <p><i class="fa fa-map-marker"></i>273 Đ. An Dương Vương, Phường 3, Quận 5, Hồ Chí Minh</p>
+                            <p><i class="fa fa-envelope"></i>inoriyuzuriha1808@gmail.com</p>
+                            <p><i class="fa fa-phone"></i>0388919451</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-widget">
+                        <h2>Follow Us</h2>
+                        <div class="contact-info">
+                            <div class="social">
+                                <a href=""><i class="fab fa-twitter"></i></a>
+                                <a href="https://www.facebook.com/ry.order1011/?ref=embed_page"><i class="fab fa-facebook-f"></i></a>
+                                <a href=""><i class="fab fa-linkedin-in"></i></a>
+                                <a href=""><i class="fab fa-instagram"></i></a>
+                                <a href=""><i class="fab fa-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-widget">
+                        <h2>Company Info</h2>
+                        <ul>
+                            <li><a href="https://www.facebook.com/ry.order1011/?ref=embed_page">About Us</a></li>
+                            <li><a href="https://ryorder.vn/pages/chinh-sach-mua-hang-tai-ry-order">Chính sách mua hàng</a></li>
+                            <li><a href="https://ryorder.vn/pages/dieu-khoan-dich-vu">Điều khoản dịch vụ</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-widget">
+                        <h2>Purchase Info</h2>
+                        <ul>
+                            <li><a href="https://ryorder.vn/pages/chinh-sach-ho-tro-khach-hang-tai-ry-order">Pyament Policy</a></li>
+                            <li><a href="https://ryorder.vn/pages/van-de-van-chuyen">Vấn đề vận chuyển</a></li>
+                            <li><a href="https://ryorder.vn/pages/tam-su-voi-khach-hang">Return Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row payment align-items-center">
+                <div class="col-md-6">
+                    <div class="payment-method">
+                        <h2>We Accept:</h2>
+                        <img src="img/payment-method.png" alt="Payment Method" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="payment-security">
+                        <h2>Secured By:</h2>
+                        <img src="img/godaddy.svg" alt="Payment Security" />
+                        <img src="img/norton.svg" alt="Payment Security" />
+                        <img src="img/ssl.svg" alt="Payment Security" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <script>
+        let products = [
+            {
+                name: "Mô hình Elysia  - Hakimi Studio",
+                price: 12000000,
+                quantity: 2,
+                image: "../img/elysia.jpg"
+            },
+            {
+                name: "Yae Miko- Imagination Studio",
+                price: 16000000,
+                quantity: 1,
+                image: "../img/miko2.jpg"
+            },
+            {
+                name: "RX-78-2 GUNDAM",
+                price: 1080000,
+                quantity: 10,
+                image: "../img/gundam.png"
+            },
+            {
+                name: "Kiana Kaslana - Honkai Impact 3 - miHoYo & APEX",
+                price: 4500000,
+                quantity: 3,
+                image: "../img/kiana2.jpg"
+            },
+            {
+                name: "Veliona & Seele Vollerei- APEX Toys x miHoYo",
+                price: 6000000,
+                quantity: 3,
+                image: "../img/see.jpg"
+            },
+        ];
+
+        function renderProducts() {
+            const table = document.getElementById('productTable');
+            table.innerHTML = '';
+            products.forEach((product, index) => {
+                table.innerHTML += `
+                    <tr>
+                        <td>
+                            <div style="display: flex; align-items: center;">
+                                <img src="${product.image}" alt="${product.name}" style="width: 50px; margin-right: 10px;">
+                                <span>${product.name}</span>
+                            </div>
+                        </td>
+                        <td>${product.price}đ</td>
+                        <td>${product.quantity}</td>
+                       <td style="display: flex; justify-content: center; align-items: center; gap: 10px;">
+                                <button style="display: flex; align-items: center; justify-content: center; width: 70px; height: 40px; text-align: center; line-height: normal;" class="btn btn-primary btn-sm" onclick="showEditForm(${index})">Sửa</button>
+                                <button style="display: flex; align-items: center; justify-content: center; width: 70px; height: 40px; text-align: center; line-height: normal;" class="btn btn-danger btn-sm" onclick="deleteProduct(${index})">Xóa</button>
+                        </td>
+
+                    </tr>`;
+            });
+        }
+
+        function showAddForm() {
+            document.getElementById('formTitle').innerText = 'Thêm Sản Phẩm';
+            document.getElementById('productId').value = '';
+            document.getElementById('name').value = '';
+            document.getElementById('price').value = '';
+            document.getElementById('quantity').value = '';
+            document.getElementById('image').value = '';
+            document.getElementById('imagePreview').style.display = 'none';
+            toggleForm();
+        }
+
+        function showEditForm(index) {
+            const product = products[index];
+            document.getElementById('formTitle').innerText = 'Sửa Sản Phẩm';
+            document.getElementById('productId').value = index;
+            document.getElementById('name').value = product.name;
+            document.getElementById('price').value = product.price;
+            document.getElementById('quantity').value = product.quantity;
+            document.getElementById('imagePreview').src = product.image;
+            document.getElementById('imagePreview').style.display = 'block';
+            toggleForm();
+        }
+
+        function deleteProduct(index) {
+            products.splice(index, 1);
+            renderProducts();
+        }
+
+        document.getElementById('productForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const id = document.getElementById('productId').value;
+            const name = document.getElementById('name').value;
+            const price = parseFloat(document.getElementById('price').value);
+            const quantity = parseInt(document.getElementById('quantity').value);
+            const image = document.getElementById('imagePreview').src;
+
+            if (id) {
+                products[id] = { name, price, quantity, image };
+            } else {
+                products.push({ name, price, quantity, image });
+            }
+            toggleForm();
+            renderProducts();
+        });
+
+        function previewImage(event) {
+            const file = event.target.files[0];
+            const reader = new FileReader();
+            reader.onload = function () {
+                const preview = document.getElementById('imagePreview');
+                preview.src = reader.result;
+                preview.style.display = 'block';
+            };
+            if (file) {
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function toggleForm() {
+            const form = document.getElementById('productFormContainer');
+            form.style.display = form.style.display === 'none' ? 'block' : 'none';
+        }
+
+        // Hiển thị sản phẩm mẫu khi tải trang
+        renderProducts();
+    </script>
+</body>
+</html>

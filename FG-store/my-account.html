@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="utf-8">
+        <title>Figure Store </title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="eCommerce HTML Template Free Download" name="keywords">
+        <meta content="eCommerce HTML Template Free Download" name="description">
+
+        <!-- Favicon -->
+        <link href="img/ryicon.jpg" rel="icon">
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Source+Code+Pro:700,900&display=swap" rel="stylesheet">
+
+        <!-- CSS Libraries -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+        <link href="lib/slick/slick.css" rel="stylesheet">
+        <link href="lib/slick/slick-theme.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <!-- Top bar Start -->
+        <div class="top-bar">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <i class="fa fa-envelope"></i>
+                        inoriyuzuriha1808@gmail.com
+                    </div>
+                    <div class="col-sm-6">
+                        <i class="fa fa-phone-alt"></i>
+                        0388919451
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Top bar End -->
+        
+        <!-- Nav Bar Start -->
+        <div class="nav">
+            <div class="container-fluid">
+                <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+                    <a href="#" class="navbar-brand">MENU</a>
+                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                        <div class="navbar-nav mr-auto">
+                            <a href="home.html" class="nav-item nav-link active">Home</a>
+                            <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle " data-toggle="dropdown">Sản Phẩm</a>
+                                <div class="dropdown-menu">
+                                    <a href="hsr.html" class="dropdown-item">Honkai Star Rail</a>
+                                    <a href="genshin2.html" class="dropdown-item">Genshin Impact</a>
+                                    <a href="zzz2.html" class="dropdown-item">Zenless Zone Zero</a>
+                                    <a href="hi32.html" class="dropdown-item">Honkai Impact 3</a>
+                                    <a href="GUNDAM2.html" class="dropdown-item">Gundam</a>
+                                </div>
+                            </div>
+                            <a href="exsearch2.html" class="nav-item nav-link">Tìm kiếm nâng cao</a>
+                            
+                            
+                            <a href="my-account.html" class="nav-item nav-link">tài khoản</a>
+                            
+                        </div>
+                        <div class="navbar-nav ml-auto">
+                            <div class="nav-item dropdown">
+                                <a href="login.html" class="nav-link dropdown-toggle" data-toggle="dropdown">Nguyễn Trọng Khang</a>
+                                <div class="dropdown-menu">
+                                    <a href="index.html" class="dropdown-item">Đăng Xuất</a>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!-- Nav Bar End -->      
+        
+        <!-- Bottom Bar Start -->
+        <div class="bottom-bar">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-md-3">
+                        <div class="logo">
+                            <a href="home.html">
+                                <img src="img/ry.webp" alt="Logo">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="search">
+                            <input type="text" placeholder="Search">
+                            <a href="timkiem2.html">
+                            <button><i class="fa fa-search"></i></button>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="user">
+                            <a href="wishlist2.html" class="btn wishlist">
+                                <i class="fa fa-heart"></i>
+                                <span>(5)</span>
+                            </a>
+                            <a href="cart2.html" class="btn cart">
+                                <i class="fa fa-shopping-cart"></i>
+                                <span>(5)</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Bottom Bar End --> 
+        
+        <!-- Breadcrumb Start -->
+        <div class="breadcrumb-wrap">
+            <div class="container-fluid">
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="home.html">Home</a></li>
+                    <li class="breadcrumb-item active">Tài khoản</li>
+                </ul>
+            </div>
+        </div>
+        <!-- Breadcrumb End -->
+        
+        <!-- My Account Start -->
+        <div class="my-account">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="nav flex-column nav-pills" role="tablist" aria-orientation="vertical">
+                            <a class="nav-link" id="orders-nav" data-toggle="pill" href="#orders-tab" role="tab"><i class="fa fa-shopping-bag"></i>Đơn Hàng</a>
+                            <a class="nav-link" id="payment-nav" data-toggle="pill" href="#payment-tab" role="tab"><i class="fa fa-credit-card"></i>Phương Thức Thanh Toán</a>
+                            <a class="nav-link" id="address-nav" data-toggle="pill" href="#address-tab" role="tab"><i class="fa fa-map-marker-alt"></i>Địa chỉ</a>
+                            <a class="nav-link" id="account-nav" data-toggle="pill" href="#account-tab" role="tab"><i class="fa fa-user"></i>Thông tin tài khoản</a>
+                            <a class="nav-link" href="index.html"><i class="fa fa-sign-out-alt"></i>Đăng Xuất</a>
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="tab-content">
+                            <div class="tab-pane fade show active" id="dashboard-tab" role="tabpanel" aria-labelledby="dashboard-nav">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered">
+                                        <thead class="thead-dark">
+                                            <tr>
+                                                <th>Mã Đơn Hàng</th>
+                                                <th>Đơn Hàng</th>
+                                                <th>Ngày Đặt</th>
+                                                <th>Gía</th>
+                                                <th>Trạng Thái</th>
+                                                <th>Chi Tiết</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>001</td>
+                                                <td>Hoshimi Miyabi - Alice21 Studio</td>
+                                                <td>12/11/2024</td>
+                                                <td>18.000.000đ</td>
+                                                <td>Đã Hoàn Thành</td>
+                                                <td><button type="button" class="btn"> 
+                                                    <a href="LS.html" style="color: inherit; text-decoration: none;">Xem</a>
+                                               </button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>002</td>
+                                                <td>Seele Vollerei & Veliona: Flower Wedding</td>
+                                                <td>20/11/2024</td>
+                                                <td>36.000.000đ</td>
+                                                <td>Đang giao hàng</td>
+                                                <td><button type="button" class="btn"> 
+                                                    <a href="LS.html" style="color: inherit; text-decoration: none;">Xem</a>
+                                               </button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>003</td>
+                                                <td>Ganyu - Imagination Studio</td>
+                                                <td>12/12/2024</td>
+                                                <td>10.000.000đ</td>
+                                                <td>Đang giao hàng</td>
+                                                <td><button type="button" class="btn"> 
+                                                    <a href="LS.html" style="color: inherit; text-decoration: none;">Xem</a>
+                                               </button></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div> 
+                            </div>
+                            <div class="tab-pane fade" id="orders-tab" role="tabpanel" aria-labelledby="orders-nav">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered">
+                                        <thead class="thead-dark">
+                                            <tr>
+                                                <th>Mã Đơn Hàng</th>
+                                                <th>Sản Phẩm</th>
+                                                <th>Ngày Đặt</th>
+                                                <th>Gía</th>
+                                                <th>Trạng Thái</th>
+                                                <th>Chi Tiết</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>001</td>
+                                                <td>Hoshimi Miyabi - Alice21 Studio</td>
+                                                <td>12/11/2024</td>
+                                                <td>18.000.000đ</td>
+                                                <td>Đã Hoàn Thành</td>
+                                                <td><button type="button" class="btn"> 
+                                                    <a href="LS.html" style="color: inherit; text-decoration: none;">Xem</a>
+                                               </button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>002</td>
+                                                <td>Seele Vollerei & Veliona: Flower Wedding</td>
+                                                <td>20/11/2024</td>
+                                                <td>36.000.000đ</td>
+                                                <td>Đang giao hàng</td>
+                                                <td><button type="button" class="btn"> 
+                                                    <a href="LS.html" style="color: inherit; text-decoration: none;">Xem</a>
+                                               </button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>003</td>
+                                                <td>Ganyu - Imagination Studio</td>
+                                                <td>12/12/2024</td>
+                                                <td>10.000.000đ</td>
+                                                <td>Đang giao hàng</td>
+                                                <td><button type="button" class="btn"> 
+                                                    <a href="LS.html" style="color: inherit; text-decoration: none;">Xem</a>
+                                               </button></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="payment-tab" role="tabpanel" aria-labelledby="payment-nav">
+                                <h4>Phương Thức Thanh Toán</h4>
+                                <div class="col-md-7">
+                                    <label>Chọn Thẻ</label>
+                                    <select class="custom-select">
+                                        <option selected>Visa</option>
+                                        <option>Credit</option>
+                                        <option>ATM</option>
+                                        <option>Zalo pay</option>
+                                        <option>MOMO</option>
+                                    </select>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <input class="form-control" type="text" placeholder="Tên chủ thẻ">
+                                        </div>                                    
+                                        
+                                        <div class="col-md-6">
+                                            <input class="form-control" type="text" placeholder="Ngày sử dụng" >
+                                        </div>
+                                        <div class="col-md-12">
+                                            <input class="form-control" type="text" placeholder="Số thẻ" >
+                                        </div>
+                                        <div class="col-md-12">
+                                            <input class="form-control" type="text" placeholder="Số CVV/CVC" >
+                                            
+                                        </div>
+                                        <div class="col-md-12">
+                                            <button type="button" class="btn"> 
+                                                <a href="my-account.html" class="alert-btn" style="color: inherit; text-decoration: none;">Cập nhập</a>
+                                           </button>
+                                            <br><br>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <div class="tab-pane fade" id="address-tab" role="tabpanel" aria-labelledby="address-nav">
+                                <h4>Địa chỉ</h4>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h5>Địa Chỉ Giao Hàng</h5>
+                                        <p>273 Đ. An Dương Vương, Phường 3, Quận 5, Hồ Chí Minh</p>
+                                        <p>SĐT: 01235694</p>
+                                        <button type="button" class="btn"> 
+                                            <a href="diachi.html" style="color: inherit; text-decoration: none;">Chỉnh Sửa</a>
+                                       </button>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="account-tab" role="tabpanel" aria-labelledby="account-nav">
+                                <h4>Thông tin chi tiết</h4>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <input class="form-control" type="text" placeholder="Họ" value="Nguyễn">
+                                    </div>                                    
+                                    <div class="col-md-6">
+                                        <input class="form-control" type="text" placeholder="Tên" value="Văn A">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input class="form-control" type="text" placeholder="Số điện thoại" value="012548475">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input class="form-control" type="text" placeholder="Email" value="inoriyuzuriha1808@gmail.com">
+                                    </div>
+                                    <div class="col-md-12">
+                                        <input class="form-control" type="text" placeholder="Địa chỉ" value="273 Đ. An Dương Vương, Phường 3, Quận 5, Hồ Chí Minh">
+                                        
+                                    </div>
+                                    <div class="col-md-12">
+                                        <button type="button" class="btn"> 
+                                            <a href="my-account.html" class="alert-btn" style="color: inherit; text-decoration: none;">Cập nhập</a>
+                                       </button>
+                                        <br><br>
+                                    </div>
+                                </div>
+                                <h4>Đổi Mật Khẩu</h4>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <input class="form-control" type="password" placeholder="Current Password">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input class="form-control" type="text" placeholder="New Password">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input class="form-control" type="text" placeholder="Confirm Password">
+                                    </div>
+                                    <div class="col-md-12">
+                                        <button type="button" class="btn"> 
+                                            <a href="my-account.html" style="color: inherit; text-decoration: none;">Lưu thay đổi</a>
+                                       </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- My Account End -->
+        
+        <!-- Footer Start -->
+        <div class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-widget">
+                            <h2>Liên lạc qua </h2>
+                            <div class="contact-info">
+                                <p><i class="fa fa-map-marker"></i>273 Đ. An Dương Vương, Phường 3, Quận 5, Hồ Chí Minh</p>
+                                <p><i class="fa fa-envelope"></i>inoriyuzuriha1808@gmail.com</p>
+                                <p><i class="fa fa-phone"></i>0388919451</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-widget">
+                            <h2>Follow Us</h2>
+                            <div class="contact-info">
+                                <div class="social">
+                                    <a href=""><i class="fab fa-twitter"></i></a>
+                                    <a href="https://www.facebook.com/ry.order1011/?ref=embed_page"><i class="fab fa-facebook-f"></i></a>
+                                    <a href=""><i class="fab fa-linkedin-in"></i></a>
+                                    <a href=""><i class="fab fa-instagram"></i></a>
+                                    <a href=""><i class="fab fa-youtube"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-widget">
+                            <h2>Company Info</h2>
+                            <ul>
+                                <li><a href="https://www.facebook.com/ry.order1011/?ref=embed_page">About Us</a></li>
+                                <li><a href="https://ryorder.vn/pages/chinh-sach-mua-hang-tai-ry-order">Chính sách mua hàng</a></li>
+                                <li><a href="https://ryorder.vn/pages/dieu-khoan-dich-vu">Điều khoản dịch vụ</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-widget">
+                            <h2>Purchase Info</h2>
+                            <ul>
+                                <li><a href="https://ryorder.vn/pages/chinh-sach-ho-tro-khach-hang-tai-ry-order">Pyament Policy</a></li>
+                                <li><a href="https://ryorder.vn/pages/van-de-van-chuyen">Vấn đề vận chuyển</a></li>
+                                <li><a href="https://ryorder.vn/pages/tam-su-voi-khach-hang">Return Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row payment align-items-center">
+                    <div class="col-md-6">
+                        <div class="payment-method">
+                            <h2>We Accept:</h2>
+                            <img src="img/payment-method.png" alt="Payment Method" />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="payment-security">
+                            <h2>Secured By:</h2>
+                            <img src="img/godaddy.svg" alt="Payment Security" />
+                            <img src="img/norton.svg" alt="Payment Security" />
+                            <img src="img/ssl.svg" alt="Payment Security" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+        
+        <!-- Footer Bottom Start -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 copyright">
+                        <p>Copyright &copy; <a href="https://htmlcodex.com">HTML Codex</a>. All Rights Reserved</p>
+                    </div>
+
+                    <div class="col-md-6 template-by">
+                        <p>Template By <a href="https://htmlcodex.com">HTML Codex</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer Bottom End -->       
+        
+        <!-- Back to Top -->
+        <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+        
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/slick/slick.min.js"></script>
+        
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+        <script>
+            // Lấy tất cả các nút có class "alert-btn"
+            const buttons = document.querySelectorAll('.alert-btn');
+    
+            // Gắn sự kiện click cho từng nút
+            buttons.forEach(button => {
+                button.addEventListener('click', function (event) {
+                    event.preventDefault(); // Ngăn chặn hành động mặc định (đi đến liên kết)
+                    alert('Đã Cập Nhật Thẻ Thành Công!'); // Hiển thị thông báo
+                });
+            });
+        </script>
+    </body>
+</html>

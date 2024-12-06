@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/style-admin.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Top bar -->
+    <div class="top-bar">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-6">
+                    <i class="fa fa-envelope"></i> inoriyuzuriha1808@gmail.com
+                </div>
+                <div class="col-sm-6">
+                    <i class="fa fa-phone-alt"></i> 0388919451
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Navbar -->
+    <div class="nav">
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+                <a href="#" class="navbar-brand">MENU</a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                    <div class="navbar-nav mr-auto">
+                        <a href="../index.html" class="nav-item nav-link active">Home</a>
+                        <a href="../product-list.html" class="nav-item nav-link">Sản Phẩm</a>
+                    </div>
+                    <div class="navbar-nav ml-auto">
+                        <span class="nav-item nav-link admin-display">
+                            <i class="fa fa-user"></i> Admin
+                        </span>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    
+    <!-- Bottom Bar -->
+    <div class="bottom-bar">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-md-3">
+                    <div class="logo">
+                        <a href="../index.html">
+                            <img src="../img/ry.webp" alt="Logo">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="title text-center">
+                        <h1 class="text-center">Trang Quản Lý (Admin)</h1>
+                        <a href="manage-products.html" class="btn btn-link">Quản lý sản phẩm</a>
+                        <a href="manage-users.html" class="btn btn-link">Quản lý người dùng</a>
+                        <a href="manageCustomer.html" class="btn btn-link">Quản lý khách hàng</a>
+                        <a href="manageOrder.html" class="btn btn-link">Quản lý đơn hàng</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Breadcrumb -->
+    <div class="breadcrumb-wrap">
+        <div class="container-fluid">
+            <h1 class="text-center">Quản lý người dùng</h1>
+        </div>
+    </div>
+
+    <!-- User Management Page -->
+    <div class="cart-page">
+        <div class="container-fluid">
+            <div class="row">
+                <!-- Bảng danh sách người dùng -->
+                <div class="col-lg-8">
+                    <button class="btn btn-success mb-3" onclick="toggleForm()"><i class="fas fa-plus"></i> Thêm Người Dùng</button>
+                    <div class="cart-page-inner">
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th>Tên người dùng</th>
+                                        <th>Email</th>
+                                        <th>Số điện thoại</th>
+                                        <th>Chức vụ</th>
+                                        <th>Hành Động</th>
+                                        
+                                    </tr>
+                                </thead>
+                                <tbody id="userTable">
+                                    <!-- Người dùng sẽ được hiển thị ở đây -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form thêm/sửa người dùng -->
+                <div class="col-lg-4">
+                    <div id="userFormContainer" style="display: none;">
+                        <h5 id="formTitle">Thêm Người Dùng</h5>
+                        <form id="userForm">
+                            <input type="hidden" id="userId">
+                            <div class="form-group">
+                                <label for="name">Tên Người Dùng</label>
+                                <input type="text" id="name" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Số Điện Thoại</label>
+                                <input type="text" id="phone" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="role">Chức vụ</label>
+                                <select id="role" class="form-control" required>
+                                    <option value="User">User</option>
+                                    <option value="Admin">Admin</option>
+                                </select>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary">Lưu</button>
+                            <button type="button" class="btn btn-secondary" onclick="toggleForm()">Hủy</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer Start -->
+        <div class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-widget">
+                            <h2>Liên lạc qua </h2>
+                            <div class="contact-info">
+                                <p><i class="fa fa-map-marker"></i>273 Đ. An Dương Vương, Phường 3, Quận 5, Hồ Chí Minh</p>
+                                <p><i class="fa fa-envelope"></i>inoriyuzuriha1808@gmail.com</p>
+                                <p><i class="fa fa-phone"></i>0388919451</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-widget">
+                            <h2>Follow Us</h2>
+                            <div class="contact-info">
+                                <div class="social">
+                                    <a href=""><i class="fab fa-twitter"></i></a>
+                                    <a href="https://www.facebook.com/ry.order1011/?ref=embed_page"><i class="fab fa-facebook-f"></i></a>
+                                    <a href=""><i class="fab fa-linkedin-in"></i></a>
+                                    <a href=""><i class="fab fa-instagram"></i></a>
+                                    <a href=""><i class="fab fa-youtube"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-widget">
+                            <h2>Company Info</h2>
+                            <ul>
+                                <li><a href="https://www.facebook.com/ry.order1011/?ref=embed_page">About Us</a></li>
+                                <li><a href="https://ryorder.vn/pages/chinh-sach-mua-hang-tai-ry-order">Chính sách mua hàng</a></li>
+                                <li><a href="https://ryorder.vn/pages/dieu-khoan-dich-vu">Điều khoản dịch vụ</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-widget">
+                            <h2>Purchase Info</h2>
+                            <ul>
+                                <li><a href="https://ryorder.vn/pages/chinh-sach-ho-tro-khach-hang-tai-ry-order">Pyament Policy</a></li>
+                                <li><a href="https://ryorder.vn/pages/van-de-van-chuyen">Vấn đề vận chuyển</a></li>
+                                <li><a href="https://ryorder.vn/pages/tam-su-voi-khach-hang">Return Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row payment align-items-center">
+                    <div class="col-md-6">
+                        <div class="payment-method">
+                            <h2>We Accept:</h2>
+                            <img src="img/payment-method.png" alt="Payment Method" />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="payment-security">
+                            <h2>Secured By:</h2>
+                            <img src="img/godaddy.svg" alt="Payment Security" />
+                            <img src="img/norton.svg" alt="Payment Security" />
+                            <img src="img/ssl.svg" alt="Payment Security" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+    </div>
+
+    <script>
+        // Dữ liệu mẫu với trạng thái isActive
+let users = [
+    { name: "Nguyễn Quốc Hưng", email: "nguyenquochung0309@gmmail.com", phone: "0987654321", role: "Admin", isActive: true },
+    { name: "Nguyễn Trọng Khang", email: "inoriyuzuriha1808@gmail.com", phone: "0123456789", role: "User", isActive: false },
+    { name: "Lâm Tuấn Kiệt", email: "ltk777@gmail.com", phone: "0912345678", role: "User", isActive: true }
+];
+
+// Hàm hiển thị danh sách người dùng
+function renderUsers() {
+    const table = document.getElementById('userTable');
+    table.innerHTML = '';
+    users.forEach((user, index) => {
+        table.innerHTML += `
+            <tr>
+                <td>${user.name}</td>
+                <td>${user.email}</td>
+                <td>${user.phone}</td>
+                <td>${user.role}</td>
+                <td style="display: flex; justify-content: center; align-items: center; gap: 10px;">
+                                <button style="display: flex; align-items: center; justify-content: center; width: 70px; height: 40px; text-align: center; line-height: normal;" class="btn btn-primary btn-sm" onclick="showEditForm(${index})">Sửa</button>
+                                <button style="display: flex; align-items: center; justify-content: center; width: 70px; height: 40px; text-align: center; line-height: normal;" class="btn btn-danger btn-sm" onclick="deleteUser(${index})">Xóa</button>
+                </td>
+                <td style="display: flex; justify-content: center; align-items: center; gap: 10px;">
+                    <button style="display: flex; align-items: center; justify-content: center; width: 70px; height: 40px; text-align: center; line-height: normal;" 
+                            class="btn btn-warning btn-sm" 
+                            onclick="toggleActivation(${index})">
+                        ${user.isActive ? 'Hủy khoá' : 'Khoá'}
+                    </button>
+                </td>
+
+            </tr>`;
+    });
+}
+
+// Hiển thị form thêm/sửa
+function toggleForm() {
+    const form = document.getElementById('userFormContainer');
+    form.style.display = form.style.display === 'none' ? 'block' : 'none';
+    document.getElementById('userForm').reset();
+    document.getElementById('userId').value = '';
+    document.getElementById('formTitle').innerText = 'Thêm Người Dùng';
+}
+
+// Hiển thị form sửa người dùng
+function showEditForm(index) {
+    const user = users[index];
+    document.getElementById('userId').value = index;
+    document.getElementById('name').value = user.name;
+    document.getElementById('email').value = user.email;
+    document.getElementById('phone').value = user.phone;
+    document.getElementById('formTitle').innerText = 'Sửa Người Dùng';
+    document.getElementById('userFormContainer').style.display = 'block';
+}
+
+// Xóa người dùng
+function deleteUser(index) {
+    if (confirm("Bạn có chắc chắn muốn xóa người dùng này không?")) {
+        users.splice(index, 1);
+        renderUsers();
+    }
+}
+
+// Bật/tắt trạng thái kích hoạt
+function toggleActivation(index) {
+    users[index].isActive = !users[index].isActive;
+    renderUsers();
+    alert(
+        `${users[index].name} đã ${
+            users[index].isActive ? 'được khóa' : 'bị hủy khóa'
+        } !`
+    );
+}
+
+// Thêm/Sửa người dùng
+document.getElementById('userForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    const id = document.getElementById('userId').value;
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+
+    if (id) {
+        // Sửa người dùng
+        users[id] = { ...users[id], name, email, phone };
+    } else {
+        // Thêm người dùng
+        users.push({ name, email, phone, isActive: true });
+    }
+    toggleForm();
+    renderUsers();
+});
+
+// Hiển thị danh sách người dùng khi tải trang
+renderUsers();
+
+    </script>
+</body>
+</html>
